@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+   <header>
+        <div class="logo">Resume<span>Match</span></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+  <div class="container">
+    <h1>Resume Analyzer</h1>
+
+    <textarea id="resumeInput" placeholder="Yahan apna CV paste karein..."></textarea>
+    <textarea id="jobInput" placeholder="Yahan job description likhein..."></textarea>
+
+    <button id="analyzeBtn">Analyze</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById("analyzeBtn").addEventListener("click", async () => {
+      const resume = document.getElementById("resumeInput").value;
+      const job = document.getElementById("jobInput").value;
+
+      if (!resume || !job) {
+        alert("Dono fields bhar dein!");
+        return;
+      }
+
+      document.getElementById("result").innerHTML = "Analyzing... Please wait";
+
+      try {
+        const res = await fetch("http://localhost:3000/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            resumeText: resume,
+            jobDescription: job
+          })
+        });
+
+        const data = await res.json();
+
+        if (data.error) {
+          document.getElementById("result").innerHTML = `<span style="color:red;">${data.error}</span>`;
+          return;
+        }
+
+        document.getElementById("result").innerHTML = `
+          <h3>Result:</h3>
+          <pre>${data.result}</pre>
+        `;
+      } catch (err) {
+        document.getElementById("result").innerHTML = "Server error!";
+      }
+    });
+  </script>
+
+</body>
+</html> 
+
+
+
