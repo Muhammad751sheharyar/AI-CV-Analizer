@@ -6,10 +6,31 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 require('dotenv').config();
+const router=require("./Router/route")
+
+
+
+
+   let mongoose = require('mongoose');
+
+    mongoose.connect("mongodb+srv://Muhammad_Sheharyar:VUdYHS7Fnxzc1CA1@cluster0.gqwbzi9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        {
+
+    })
+
+    .then(()=>{
+        console.log("Connected to MongoDB");
+    })   
+    .catch((err)=>{
+        console.log("Error connectiong to mongoDB",err)
+    })
+
+    app.use("/api",router);
+
 
 
 // ---- Gemini 2.0 Flash Model ----
-const genAI = new GoogleGenerativeAI(process.env.Gemini_key);
+const genAI = new GoogleGenerativeAI("");
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash",
 });

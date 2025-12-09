@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign Up - ResumeMatch</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-user-plus"></i> Sign Up</h1>
+
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="Fname" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+        <input type="email" id="Email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password"><i class="fas fa-lock"></i> Password</label>
+        <input type="password" id="Password" name="password" placeholder="Create a password" required>
+      </div>
+
+      <button type="submit"  onclick="Sinup()"id="signupBtn" >
+        <i class="fas fa-user-plus"></i> Sign Up
+      </button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="./login.html">Log In</a>
+    </div>
+  </div>
+    <script src="app.js"></script>
+</body>
+</html>
