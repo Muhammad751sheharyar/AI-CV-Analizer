@@ -15,5 +15,5 @@ const UserData=new mongoose.Schema({
 })
 
 
-let User=mongoose.model("newdata",UserData);
+let User=mongoose.model("analizer",UserData);
 module.exports=User;

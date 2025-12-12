@@ -1,5 +1,4 @@
-   /* GOOGLE FONT */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
     * {
       margin: 0;
@@ -25,7 +24,7 @@
       100% { background-position: 100% 50%; }
     }
 
-    /* MAIN CONTAINER */
+  
     .container {
       max-width: 500px;
       width: 100%;
@@ -156,8 +155,6 @@
     .signup-link a:hover {
       color: white;
     }
-
-    /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       .container {
         padding: 30px;
@@ -174,4 +171,4 @@
         margin-bottom: 10px;
       }
     }
-  
+   */

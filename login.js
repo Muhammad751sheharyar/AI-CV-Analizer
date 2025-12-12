@@ -1,8 +1,6 @@
 
 let loginBtn = document.getElementById('loginBtn');
-// loginBtn.addEventListener('click',()=>{
-//     alert('event Fired')
-// })
+
 loginBtn.addEventListener('click', async () => {
     let Email = document.getElementById('loginEmail').value;
     let password = document.getElementById('loginPassword').value;
@@ -14,7 +12,6 @@ loginBtn.addEventListener('click', async () => {
           Email,
           password  
         })
-        // alert(res.data);
         alert("login sucessFully")
         window.open('index.html');
 
@@ -22,6 +19,3 @@ loginBtn.addEventListener('click', async () => {
         console.log(err)
     }
 })
-
-
-

@@ -1,38 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Log In - ResumeMatch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="login1.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Login Form</title>
+  <style>
+    /* Colorful single-sided styling with new colors */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); /* Orange to yellow gradient */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    .loginform {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      animation: fadeIn 0.5s ease-in-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fh {
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff7e5f; /* Matching orange */
+    }
+    .in1 {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    input {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #f9f9f9;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 126, 95, 0.5); /* Orange glow */
+    }
+    .icon1 {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
+    .btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .btnf button {
+      background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); /* Same gradient */
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .btnf button:hover {
+      transform: scale(1.05);
+    }
+    .inlogn a {
+      color: #ff7e5f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .bottom {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1><i class="fas fa-sign-in-alt"></i> Log In</h1>
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+  <div class="loginform" >
+    <div class="logo">
+      <img src="../assets/822729.png" alt="Logo" height="80" width="80">
+    </div>
+    <h2 class="fh">Continue your account</h2>
+    <div class="email in1">
+      <input type="email" name="email" id="loginEmail" placeholder="Email" required>
+      <div class="icon1"><i class="fa-solid fa-envelope"></i></div>
+    </div>
+    <div class="pass in1">
+      <input type="password" name="password" id="loginPassword" placeholder="Password" required>
+      <div class="icon1"><i class="fa-solid fa-lock"></i></div>
+    </div>
+    <div class="btn">
+      <p class="inlogn"><a href="signup.html" class="log">Signup</a></p>
+      <div class="login btnf">
+        <button type="submit" onclick="loginfnc()" id="loginBtn">Login</button>
       </div>
-
-      <div class="form-group">
-        <label for="password"><i class="fas fa-lock"></i> Password</label>
-        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
-      </div>
-
-      <button type="submit" id="loginBtn">
-        <i class="fas fa-sign-in-alt"></i> Log In
-      </button>
-    </form>
-
-    <button class="signup-link" onclick="loginfnc()">
-      Don't have an account? <a href="index.html">Sign Up</a>
-    </button>
+    </div>
+    <div class="bottom">Welcome back!</div>
   </div>
-  <script src="./login.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Login Form</title>
+</head>
+<body>
+  <div class="Main">
+    <div class="loginform">
+      <h2 class="fh">Continue your acount
+
+      </h2>
+      <div class="email in1">
+        <input type="email" name="" id="loginEmail" placeholder="Email">
+        <div class="icon1"><i class="fa-solid fa-envelope"></i></div>
+      </div>
+
+      <div class="pass in1"><input type="Lpassword" name="" id="loginPassword" placeholder="password"></div>
+      <div class="btn">
+        <p class="inlogn"><a href="index.html" class="log">signup</a></p>
+        <div class="login btnf"><button onclick="loginfnc()" id="loginBtn"><a href="#">login</a></button></div>
+      </div>
+
+    </div>
+    <div class="loginText">
+      <div class="heading">
+        <h2>Welcome to </h2>
+      </div>
+      <div class="logo"><img src="../assets/822729.png" alt="" srcset="" height="100px" width="100px"></div>
+      <div class="sinup btnf"><button onclick="">
+          <a href="signup.html">sign up</a>
+        </button></div>
+
+      <div class="bottom">create | create</div>
+
+    </div>
+  </div>
 </body>
 
 </html>
+<script src="login.js"></script>
+</body>
+
+</html> -->
