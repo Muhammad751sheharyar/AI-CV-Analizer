@@ -1,249 +1,177 @@
+/* new */
+
+
+
 /* GOOGLE FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  padding: 0 15px;
+    background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+    animation: backgroundShift 20s ease-in-out infinite alternate;
 }
 
-/* HEADER */
-header {
-  width: 100%;
-  padding: 18px 50px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
-}
-
-.logo span {
-  color: #00e1ff;
-}
-
-nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #00e1ff;
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 /* MAIN CONTAINER */
 .container {
-  max-width: 550px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  margin: 120px auto 30px;
-  padding: 30px;
-  border-radius: 20px;
-  color: white;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    padding: 45px;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
 }
-
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 700;
+    font-size: 32px;
+    color: white;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-label {
-  font-size: 15px;
-  margin-bottom: 5px;
-  display: block;
+h1 i {
+    margin-right: 15px;
+    color: #00d4ff;
 }
 
-textarea {
-  width: 100%;
-  height: 110px;
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  margin-bottom: 15px;
-  background: rgba(255,255,255,0.4);
-  resize: none;
+.form-group {
+    margin-bottom: 25px;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 17px;
-  font-weight: 500;
-  background: #00e1ff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  color: #003049;
-  transition: 0.3s;
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
 }
-
-button:hover {
-  background: white;
-}
-
-#result {
-  margin-top: 20px;
-  background: rgba(255,255,255,0.3);
-  padding: 15px;
-  border-radius: 12px;
-  color: #002744;
-}
-
-#result h3 {
-  margin-bottom: 6px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* jbkkn */
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  padding: 0 15px;
-}
-
-/* HEADER */
 header {
-  width: 100%;
-  padding: 18px 50px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+    display: flex;
+    height: 150px;
+    width: 80%;
+    /* background-color: red; */
+    justify-content: space-between;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
+header .logo {
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
 }
 
-.logo span {
-  color: #00e1ff;
+header nav {
+    display: flex;
+    gap: 22px;
 }
 
 nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #00e1ff;
-}
-
-/* MAIN CONTAINER */
-.container {
-  max-width: 550px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  margin: 120px auto 30px;
-  padding: 30px;
-  border-radius: 20px;
-  color: white;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-label {
-  font-size: 15px;
-  margin-bottom: 5px;
-  display: block;
-}
-
-textarea {
-  width: 100%;
-  height: 110px;
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  margin-bottom: 15px;
-  background: rgba(255,255,255,0.4);
-  resize: none;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
 }
 
 button {
-  width: 100%;
-  padding: 12px;
-  font-size: 17px;
-  font-weight: 500;
-  background: #00e1ff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  color: #003049;
-  transition: 0.3s;
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+
+button i {
+    margin-right: 12px;
 }
 
 button:hover {
-  background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.4);
 }
 
-#result {
-  margin-top: 20px;
-  background: rgba(255,255,255,0.3);
-  padding: 15px;
-  border-radius: 12px;
-  color: #002744;
+button:active {
+    transform: translateY(0);
 }
 
-#result h3 {
-  margin-bottom: 6px;
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.login-link {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+textarea {
+    border-radius: 20px;
+    height: 100px;
+    width: 97%;
+    font-size: 15px
+}
+
+.login-link a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+        flex-direction: column;
+    }
+
+    h1 i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

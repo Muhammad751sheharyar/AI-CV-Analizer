@@ -43,7 +43,7 @@ async function login(req, res) {
                 res.send("invalid password!");
             }
         });
-        window.open("index.html")
+        window.open("./index.html")
         console.log("user login successfuly");
     } catch (err) {
         res.send(
